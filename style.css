@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #222;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 24px 18px 100px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 14px;
+}
+
+.sleep-time {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.times {
+    display: flex;
+    justify-content: space-between;
+}
+
+.times p {
+    color: #888;
+    font-size: 14px;
+}
+
+.times h3 {
+    margin-top: 6px;
+    font-size: 24px;
+}
+
+.average {
+    display: flex;
+    justify-content: space-between;
+}
+
+.average p {
+    color: #888;
+    font-size: 14px;
+}
+
+.average h3 {
+    margin-top: 6px;
+    font-size: 22px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 18px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+
+.sleep-btn {
+    background: #1d4ed8;
+    color: white;
+}
+
+.wake-btn {
+    background: white;
+    color: #1d4ed8;
+    border: 2px solid #1d4ed8;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 0 22px;
+    border-top: 1px solid #ddd;
+}
+
+.nav div {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
