@@ -271,33 +271,19 @@ h1{
 
     .buttons{
         flex-direction:column;
-    }
-
-}
-.delete-btn{
+        .delete-btn{
 
     border:none;
 
-    background:#ef4444;
+    background:transparent;
 
-    color:white;
+    color:#ef4444;
 
-    width:40px;
-
-    height:40px;
-
-    border-radius:50%;
+    font-size:22px;
 
     cursor:pointer;
 
-    font-size:18px;
-
-    transition:.2s;
-
 }
-
-.delete-btn:active{
-
-    transform:scale(.9);
+    }
 
 }
