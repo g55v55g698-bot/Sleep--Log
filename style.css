@@ -274,3 +274,30 @@ h1{
     }
 
 }
+.delete-btn{
+
+    border:none;
+
+    background:#ef4444;
+
+    color:white;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.2s;
+
+}
+
+.delete-btn:active{
+
+    transform:scale(.9);
+
+}
