@@ -80,16 +80,29 @@ function renderHistory(){
 
         item.innerHTML=`
 
-            <span class="history-date">
-                ${record.date}
-            </span>
+            item.innerHTML = `
 
-            <span class="history-duration">
-                ${record.duration}
-            </span>
+<div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
 
-        `;
+    <div>
 
+        <div class="history-date">
+            ${record.date}
+        </div>
+
+        <div class="history-duration">
+            ${record.duration}
+        </div>
+
+    </div>
+
+    <button class="delete-btn" onclick="deleteRecord(${records.indexOf(record)})">
+        🗑️
+    </button>
+
+</div>
+
+`;
         historyList.appendChild(item);
 
     });
@@ -280,3 +293,24 @@ saveRecords = function(){
     updateChart();
 
 };
+// ======================
+// 記録削除
+// ======================
+
+function deleteRecord(index){
+
+    const ok = confirm("この記録を削除しますか？");
+
+    if(!ok) return;
+
+    records.splice(index,1);
+
+    saveRecords();
+
+    renderHistory();
+
+    updateAverage();
+
+    updateChart();
+
+}
