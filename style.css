@@ -1,247 +1,190 @@
-/* ===== SleepLog Ver2 ===== */
+/* ===== SleepLog v2 ===== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-        "Helvetica Neue", sans-serif;
-    background: #f2f2f7;
-    color: #111;
-}
+body{
 
-.container {
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    padding: 24px 18px 100px;
-}
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
 
-header {
-    margin-bottom: 24px;
-}
+    background:#f5f5f7;
 
-header h1 {
-    font-size: 34px;
-    font-weight: 700;
-}
-
-.subtitle {
-    color: #8e8e93;
-    margin-top: 6px;
-}
-
-.card {
-    background: white;
-    border-radius: 24px;
-    padding: 22px;
-    margin-bottom: 18px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.06);
-}
-
-.card h2 {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 18px;
-}
-
-.sleep-time {
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 22px;
-}
-
-.times,
-.average {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.times p,
-.average p {
-    color: #8e8e93;
-    margin-bottom: 6px;
-}
-
-.times h3,
-.average h3 {
-    font-size: 24px;
-}
-
-button {
-    width: 100%;
-    border: none;
-    border-radius: 18px;
-    padding: 18px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 14px;
-    transition: .2s;
-}
-
-button:active {
-    transform: scale(.98);
-}
-
-.sleep-btn {
-    background: #2563eb;
-    color: white;
-}
-
-.wake-btn {
-    background: white;
-    color: #2563eb;
-    border: 2px solid #2563eb;
-}
-/* ===== 履歴 ===== */
-
-.history {
-    margin-top: 28px;
-}
-
-.history h2 {
-    font-size: 22px;
-    margin-bottom: 18px;
-}
-
-.history-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 18px;
-    margin-bottom: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.05);
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.history-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-}
-
-.history-date {
-    font-size: 15px;
-    font-weight: 600;
-    color: #6b7280;
-    margin-bottom: 14px;
-}
-
-.history-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.history-label {
-    color: #8e8e93;
-    font-size: 15px;
-}
-
-.history-value {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.history-duration {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #ececec;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 700;
-    color: #2563eb;
-}
-
-/* ===== スマホ最適化 ===== */
-
-@media (max-width: 430px) {
-
-    .container {
-        padding: 20px 16px 90px;
-    }
-
-    header h1 {
-        font-size: 30px;
-    }
-
-    .sleep-time {
-        font-size: 40px;
-    }
-
-    .times h3,
-    .average h3 {
-        font-size: 20px;
-    }
-
-    button {
-        font-size: 17px;
-    }
+    color:#111827;
 
 }
 
-/* ===== スクロールバー ===== */
+.container{
 
-::-webkit-scrollbar {
-    width: 6px;
-}
+    max-width:430px;
 
-::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    border-radius: 20px;
-}
+    margin:auto;
 
-/* ===== アニメーション ===== */
-
-.card,
-.history-card,
-button {
-    animation: fadeUp .35s ease;
-}
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    padding:20px;
 
 }
-/* ===== グラフ ===== */
 
-.chart-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 18px;
+h1{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:34px;
+
+    font-weight:700;
+
 }
 
-.chart-tab {
-    flex: 1;
-    background: #f2f2f7;
-    color: #2563eb;
-    border: none;
-    border-radius: 12px;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .2s;
+.card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:22px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
 }
 
-.chart-tab.active {
-    background: #2563eb;
-    color: white;
+.card h2{
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
 }
 
-#sleepChart {
-    width: 100%;
-    max-height: 280px;
+.times{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.times p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    margin-bottom:6px;
+
+}
+
+.times h3{
+
+    font-size:26px;
+
+}
+
+.result{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.result h3{
+
+    color:#6b7280;
+
+    margin-bottom:10px;
+
+}
+
+.sleep-time{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#2563eb;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.buttons button{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:16px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.sleep-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.wake-btn{
+
+    background:white;
+
+    color:#2563eb;
+
+    border:2px solid #2563eb;
+
+}
+
+.buttons button:active{
+
+    transform:scale(.97);
+
+}
+
+.average{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    text-align:center;
+
+}
+
+.average p{
+
+    color:#6b7280;
+
+    margin-bottom:8px;
+
+}
+
+.average h3{
+
+    font-size:24px;
+
 }
