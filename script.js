@@ -284,15 +284,7 @@ function updateChart(){
 }
 
 // データ保存後にグラフ更新
-const originalSaveRecords = saveRecords;
 
-saveRecords = function(){
-
-    originalSaveRecords();
-
-    updateChart();
-
-};
 // ======================
 // 記録削除
 // ======================
