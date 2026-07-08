@@ -78,10 +78,7 @@ function renderHistory(){
 
         item.className="history-item";
 
-        item.innerHTML=`
-
-            item.innerHTML = `
-
+        item.innerHTML = `
 <div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
 
     <div>
@@ -101,7 +98,6 @@ function renderHistory(){
     </button>
 
 </div>
-
 `;
         historyList.appendChild(item);
 
@@ -163,6 +159,10 @@ updateAverage();
 sleepButton.addEventListener("click", () => {
 
     sleepStart = new Date();
+    localStorage.setItem(
+    "currentSleepStart",
+    sleepStart.toISOString()
+);
 
     sleepStartText.textContent = formatTime(sleepStart);
 
