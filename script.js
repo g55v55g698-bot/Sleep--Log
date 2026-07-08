@@ -141,3 +141,126 @@ function updateAverage(){
 renderHistory();
 
 updateAverage();
+// =====================================
+// Part2
+// おやすみ・起床
+// =====================================
+
+// おやすみボタン
+sleepButton.addEventListener("click", () => {
+
+    sleepStart = new Date();
+
+    sleepStartText.textContent = formatTime(sleepStart);
+
+    alert("🌙 おやすみなさい！");
+
+});
+
+// 起床ボタン
+wakeButton.addEventListener("click", () => {
+
+    if(!sleepStart){
+
+        alert("先に『おやすみ』を押してください！");
+
+        return;
+
+    }
+
+    const wakeTime = new Date();
+
+    wakeTimeText.textContent = formatTime(wakeTime);
+
+    const diff = wakeTime - sleepStart;
+
+    const minutes = Math.floor(diff / 1000 / 60);
+
+    const hours = Math.floor(minutes / 60);
+
+    const remainMinutes = minutes % 60;
+
+    sleepTime.textContent =
+        `${hours}時間${remainMinutes}分`;
+
+    // 今日の日付
+    const today =
+        new Date().toLocaleDateString("ja-JP");
+
+    // 記録追加
+    records.push({
+
+        date: today,
+
+        start: formatTime(sleepStart),
+
+        end: formatTime(wakeTime),
+
+        duration: `${hours}時間${remainMinutes}分`,
+
+        minutes: minutes
+
+    });
+
+    // 保存
+    saveRecords();
+
+    // 表示更新
+    renderHistory();
+
+    updateAverage();
+
+    // リセット
+    sleepStart = null;
+
+    alert("☀️ おはようございます！");
+
+});
+// =====================================
+// Part3
+// 初期化・データ更新
+// =====================================
+
+// 最新の記録を表示
+function refreshUI(){
+
+    renderHistory();
+
+    updateAverage();
+
+}
+
+// ページを開いた時
+window.addEventListener("load",()=>{
+
+    refreshUI();
+
+});
+
+// ================================
+// 開発用（あとでグラフを追加）
+// ================================
+
+function getRecords(){
+
+    return records;
+
+}
+
+// グラフ更新用
+function updateChart(){
+
+    // Ver.3で実装予定
+
+}
+
+// データ保存後にグラフ更新
+const originalSaveRecords = saveRecords;
+
+saveRecords = function(){
+
+    originalSaveRecords();
+
+    updateChart();
+
+};
