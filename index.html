@@ -1,95 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleepLog</title>
 
-<title>SleepLog</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>😴 SleepLog</h1>
+    <header>
+        <h1>😴 SleepLog</h1>
+        <p class="subtitle">毎日の睡眠を記録しよう</p>
+    </header>
 
-<div class="card">
+    <!-- 今日の睡眠 -->
+    <section class="card">
 
-<h2>今日の睡眠</h2>
+        <h2>今日の睡眠</h2>
 
-<p class="sleep-time">7時間24分</p>
+        <div class="sleep-time" id="sleepTime">
+            --時間--分
+        </div>
 
-<div class="times">
+        <div class="times">
 
-<div>
+            <div>
+                <p>🌙 就寝</p>
+                <h3 id="sleepStart">--:--</h3>
+            </div>
 
-<p>🌙 就寝</p>
+            <div>
+                <p>☀️ 起床</p>
+                <h3 id="wakeTime">--:--</h3>
+            </div>
 
-<h3>23:48</h3>
+        </div>
 
-</div>
+    </section>
 
-<div>
+    <!-- 統計 -->
+    <section class="card">
 
-<p>☀️ 起床</p>
+        <h2>統計</h2>
 
-<h3>07:12</h3>
+        <div class="average">
 
-</div>
+            <div>
+                <p>今週平均</p>
+                <h3 id="weekAverage">--時間</h3>
+            </div>
 
-</div>
+            <div>
+                <p>今月平均</p>
+                <h3 id="monthAverage">--時間</h3>
+            </div>
 
-</div>
+        </div>
 
-<div class="card">
+    </section>
 
-<div class="average">
+    <!-- ボタン -->
 
-<div>
+    <button class="sleep-btn" id="sleepBtn">
+        🌙 おやすみ
+    </button>
 
-<p>今週平均</p>
+    <button class="wake-btn" id="wakeBtn">
+        ☀️ 起床
+    </button>
 
-<h3>7時間08分</h3>
+    <!-- 履歴 -->
 
-</div>
+    <section class="history">
 
-<div>
+        <h2>最近の記録</h2>
 
-<p>今月平均</p>
+        <div id="historyList">
 
-<h3>6時間57分</h3>
+            <div class="history-card">
 
-</div>
+                <div class="history-date">
+                    記録はまだありません
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<button class="sleep-btn">
-🌙 おやすみ
-</button>
-
-<button class="wake-btn">
-☀️ 起床
-</button>
-
-<div class="nav">
-
-<div>🏠<br>ホーム</div>
-
-<div>📈<br>グラフ</div>
-
-<div>📅<br>履歴</div>
-
-</div>
+    </section>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
