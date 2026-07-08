@@ -6,6 +6,8 @@
     <title>SleepLog</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -13,31 +15,44 @@
 
 <div class="container">
 
-    <header>
-        <h1>😴 SleepLog</h1>
-        <p class="subtitle">毎日の睡眠を記録しよう</p>
-    </header>
+    <h1>🌙 SleepLog</h1>
 
     <!-- 今日の睡眠 -->
     <section class="card">
 
-        <h2>今日の睡眠</h2>
-
-        <div class="sleep-time" id="sleepTime">
-            --時間--分
-        </div>
+        <h2>😴 今日の睡眠</h2>
 
         <div class="times">
 
             <div>
-                <p>🌙 就寝</p>
+                <p>就寝</p>
                 <h3 id="sleepStart">--:--</h3>
             </div>
 
             <div>
-                <p>☀️ 起床</p>
+                <p>起床</p>
                 <h3 id="wakeTime">--:--</h3>
             </div>
+
+        </div>
+
+        <div class="result">
+
+            <h3>睡眠時間</h3>
+
+            <p class="sleep-time">--時間--分</p>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="sleep-btn">
+                🌙 おやすみ
+            </button>
+
+            <button class="wake-btn">
+                ☀️ 起床
+            </button>
 
         </div>
 
@@ -45,21 +60,8 @@
 
     <!-- 統計 -->
     <section class="card">
-        
 
-        <h2>統計</h2>
-        <section class="card">
-
-    <h2>📊 睡眠グラフ</h2>
-
-    <div class="chart-buttons">
-        <button id="weekChartBtn" class="chart-tab active">7日</button>
-        <button id="monthChartBtn" class="chart-tab">30日</button>
-    </div>
-
-    <canvas id="sleepChart"></canvas>
-
-</section>
+        <h2>📊 統計</h2>
 
         <div class="average">
 
@@ -77,31 +79,37 @@
 
     </section>
 
-    <!-- ボタン -->
+    <!-- グラフ -->
+    <section class="card">
 
-    <button class="sleep-btn" id="sleepBtn">
-        🌙 おやすみ
-    </button>
+        <h2>📈 睡眠グラフ</h2>
 
-    <button class="wake-btn" id="wakeBtn">
-        ☀️ 起床
-    </button>
+        <div class="chart-buttons">
+
+            <button id="weekChartBtn" class="chart-tab active">
+                7日
+            </button>
+
+            <button id="monthChartBtn" class="chart-tab">
+                30日
+            </button>
+
+        </div>
+
+        <canvas id="sleepChart"></canvas>
+
+    </section>
 
     <!-- 履歴 -->
+    <section class="card">
 
-    <section class="history">
-
-        <h2>最近の記録</h2>
+        <h2>📅 最近の記録</h2>
 
         <div id="historyList">
 
-            <div class="history-card">
-
-                <div class="history-date">
-                    記録はまだありません
-                </div>
-
-            </div>
+            <p class="empty">
+                まだ記録がありません
+            </p>
 
         </div>
 
@@ -110,6 +118,7 @@
 </div>
 
 <script src="script.js"></script>
+<script src="chart.js"></script>
 
 </body>
 </html>
