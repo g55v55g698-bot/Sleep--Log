@@ -1,76 +1,76 @@
+/* ===== SleepLog Ver2 ===== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }
 
 body {
-    background: #f5f7fb;
-    color: #222;
-    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "Helvetica Neue", sans-serif;
+    background: #f2f2f7;
+    color: #111;
 }
 
 .container {
+    width: 100%;
     max-width: 430px;
-    margin: 0 auto;
+    margin: auto;
     padding: 24px 18px 100px;
 }
 
-h1 {
-    font-size: 32px;
-    font-weight: 700;
+header {
     margin-bottom: 24px;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #8e8e93;
+    margin-top: 6px;
 }
 
 .card {
     background: white;
-    border-radius: 22px;
+    border-radius: 24px;
     padding: 22px;
     margin-bottom: 18px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
 }
 
 .card h2 {
     font-size: 18px;
     color: #666;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 
 .sleep-time {
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 22px;
 }
 
-.times {
-    display: flex;
-    justify-content: space-between;
-}
-
-.times p {
-    color: #888;
-    font-size: 14px;
-}
-
-.times h3 {
-    margin-top: 6px;
-    font-size: 24px;
-}
-
+.times,
 .average {
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
+.times p,
 .average p {
-    color: #888;
-    font-size: 14px;
+    color: #8e8e93;
+    margin-bottom: 6px;
 }
 
+.times h3,
 .average h3 {
-    margin-top: 6px;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 button {
@@ -81,36 +81,137 @@ button {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 14px;
-    cursor: pointer;
+    transition: .2s;
+}
+
+button:active {
+    transform: scale(.98);
 }
 
 .sleep-btn {
-    background: #1d4ed8;
+    background: #2563eb;
     color: white;
 }
 
 .wake-btn {
     background: white;
-    color: #1d4ed8;
-    border: 2px solid #1d4ed8;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+/* ===== 履歴 ===== */
+
+.history {
+    margin-top: 28px;
 }
 
-.nav {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 430px;
-    background: white;
+.history h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.history-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.history-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.history-date {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 14px;
+}
+
+.history-row {
     display: flex;
-    justify-content: space-around;
-    padding: 14px 0 22px;
-    border-top: 1px solid #ddd;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.nav div {
+.history-label {
+    color: #8e8e93;
+    font-size: 15px;
+}
+
+.history-value {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.history-duration {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #ececec;
     text-align: center;
-    color: #666;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* ===== スマホ最適化 ===== */
+
+@media (max-width: 430px) {
+
+    .container {
+        padding: 20px 16px 90px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .sleep-time {
+        font-size: 40px;
+    }
+
+    .times h3,
+    .average h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 17px;
+    }
+
+}
+
+/* ===== スクロールバー ===== */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 20px;
+}
+
+/* ===== アニメーション ===== */
+
+.card,
+.history-card,
+button {
+    animation: fadeUp .35s ease;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
