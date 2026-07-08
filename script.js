@@ -212,6 +212,9 @@ wakeButton.addEventListener("click", () => {
 
     // リセット
     sleepStart = null;
+    localStorage.removeItem(
+    "currentSleepStart"
+);
 
     alert("☀️ おはようございます！");
 
@@ -232,6 +235,19 @@ function refreshUI(){
 
 // ページを開いた時
 window.addEventListener("load",()=>{
+
+    // 就寝時間を復元
+    const savedSleep =
+        localStorage.getItem("currentSleepStart");
+
+    if(savedSleep){
+
+        sleepStart = new Date(savedSleep);
+
+        sleepStartText.textContent =
+            formatTime(sleepStart);
+
+    }
 
     refreshUI();
 
