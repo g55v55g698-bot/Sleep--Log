@@ -272,18 +272,30 @@ h1{
     .buttons{
         flex-direction:column;
         .delete-btn{
+            .delete-btn{
 
     border:none;
-
-    background:transparent;
-
-    color:#6b7280;
-
-    font-size:22px;
-
+    background:white;
+    color:#6b7280;   /* ←ここをグレーに */
+    width:40px;
+    height:40px;
+    border-radius:50%;
     cursor:pointer;
+    font-size:20px;
+    transition:.2s;
 
 }
-    }
+
+.delete-btn:hover{
+
+    background:#f3f4f6;
 
 }
+
+.delete-btn:active{
+
+    transform:scale(.9);
+    background:#e5e7eb;
+
+}
+
